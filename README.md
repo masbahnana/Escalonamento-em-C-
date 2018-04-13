@@ -1,16 +1,15 @@
 # Escalonamento-em-C-
 Estudo de um simulador de escalonamento utilizando a linguagem C. 
-
 /* Simulador de Escalonamento de Processos*/
 #include <stdio.h>
 #include <stdlib.h>
 /* Estrutura */
 struct processos {
-    int id;                   /* Identifição do processo*/              
- int surto;                /* Tempo de duração do processo*/
+    int id;                     /* Identifição do processo*/              
+ int surto;                     /* Tempo de duração do processo*/
     int prioridade;           
-    int execucao;             /* Tempo de execução do processo*/
-    int espera;               /* Tempo de espera do processo*/
+    int execucao;               /* Tempo de execução do processo*/
+    int espera;                 /* Tempo de espera do processo*/
     struct processos *prox;
 };
 /* Declarações de Protótipo de função */
@@ -60,7 +59,7 @@ struct processos *init_processos (int id, int surto, int prioridade) {
     return(proc);
 };
 
-/* Escalonamento FCFS - o primeiro que chega 
+/* Escalonamento o primeiro que chega 
 /* é o primeiro a sair, ou seja, será executado primeiro */
 void fcfs (struct processos *proc) {
     int tempo = 0, inicio, fim;
